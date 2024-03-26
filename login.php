@@ -89,6 +89,9 @@ session_start();
                     <div class="register">
                         <p>Don't have an account? <a href="registration.php"> Register </a></p>
                     </div>
+                    <div class="register">
+                        <p>Login as a staff? <a href="staff_login.php"> Click here </a></p>
+                    </div>
                 </form>
             </div>
         </div>
