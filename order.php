@@ -54,7 +54,7 @@ $status = "";
                             onclick="return confirm('Are you sure you want to delete this order?')">Delete</a>
                     </td>
                     <td align="center">
-                        <a href="order_confirm.php?order_ID=<?php echo $row['order_ID'];?>"
+                        <a href="payment.php?order_ID=<?php echo $row['order_ID'];?>"
                             onclick="return confirm('Do you want to confirm the order?')">Confirm</a>
                     </td>
                     <?php } else { ?>

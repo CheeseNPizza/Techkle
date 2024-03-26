@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    
+}
+
+h2 {
+    font-size: 30px;
+    color: #3D3B40;
+    text-transform: capitalize;
+    font-weight: 300;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 30px;
+    color: #3D3B40;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.tbl-header {
+    background-color: #525CEB;
+    border: #EEF5FF;
+}
+
+.tbl-content {
+    height: 300px;
+    overflow-x: auto;
+    margin-top: 0px;
+    background-color: #EEF5FF;
+    border: #EEF5FF;
+}
+
+th {
+    padding: 20px 15px;
+    text-align: left;
+    font-weight: 500;
+    font-size: auto;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+    font-weight: 300;
+    font-size: auto;
+    color: #3D3B40;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+}
+
+.tf {
+    padding: 20px 15px;
+    text-align: right;
+    font-weight: 500;
+    font-size: auto;
+    color: #3D3B40;
+    text-transform: uppercase;
+}
+
+/* demo styles */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+
+body {
+    background: #f2f2f2;
+    font-family: 'Roboto', sans-serif;
+}
+
+section {
+    margin: 50px;
+}
+
+.form-container {
+    background-color: #EEF5FF;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #3D3B40;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #525CEB;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+input[type="submit"]:hover {
+    background-color: #3d48cc;
+}
+
+/* follow me template */
+.made-with-love {
+    margin-top: 40px;
+    padding: 10px;
+    clear: left;
+    text-align: center;
+    font-size: 10px;
+    font-family: arial;
+    color: #fff;
+}
+
+.made-with-love i {
+    font-style: normal;
+    color: #F50057;
+    font-size: 14px;
+    position: relative;
+    top: 2px;
+}
+
+.made-with-love a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.made-with-love a:hover {
+    text-decoration: underline;
+}
+
+/* for custom scrollbar for webkit browser*/
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
