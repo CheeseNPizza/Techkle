@@ -7,9 +7,13 @@ require('main_header.php');
 <head>
     <meta charset="utf-8">
     <title>Product Records</title>
+    <!-- css -->
     <link rel="stylesheet" href="css/product.css">
+    <!-- swiper css -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
 </head>
 <body>
+    
     <div class="container">
         <div>
             <div class="techkle_big_img">
@@ -33,24 +37,60 @@ require('main_header.php');
                         <div id="cm"><img src="css/category_image/cm.jpg"></div>
                         <div id="ga"><img src="css/category_image/ga2.jpg"></div>
                         <div id="fh"><img src="css/category_image/fh2.jpg"></div>
-                        <div id="fh"><img src="css/category_image/fh2.jpg"></div>
                     </div>
                 </div>
-                <div id="ca_content" class="ca">
-                    <p>Charging Accessories</p>
+                <div id="ca_content">
+                    <p class="cat_title">Charging Accessories</p>
                     <div class="line"></div>
                     
-                        <div class="flexbox-container">
-                            
-                            <div>Content 1</div>
-                            <div>Content 2</div>
-                            <div>Content 3</div>
-                            <div>Content 4</div>
-                            <div>Content 4</div>
-                            <!-- Add more divs as needed -->
+                    <!-- <div class="flexbox-container">     
+                        <div>Content 1</div>
+                        <div>Content 2</div>
+                        <div>Content 3</div>
+                        <div>Content 4</div>
+                        <div>Content 4</div>
+                    </div> -->
+                    <div class="largest_box"><!--body-->
+                        <div class="content_box swiper"> <!--container-->
+                            <div class="slide_container">
+                                <div class="card_wrapper swiper-wrapper">
+                                    <?php
+                                        $count=1;
+                                        $sel_query = "SELECT * FROM product WHERE product_cat = 'Charging Accessories' ORDER BY id DESC;";
+                                        $result = mysqli_query($con,$sel_query);
+                                        $currencySymbol = "RM";
+                                        while($row = mysqli_fetch_assoc($result)) { 
+                                    ?>
+                                        <div class="card swiper-slide">
+                                            <div class="image_box"> 
+                                                <img src="product_image/<?php echo $row["product_image"]; ?>"/>
+                                            </div>
+                                            <div class="product_details">
+                                                <div class="product_name">
+                                                    <p><?php echo $row["product_name"]; ?></p>                                           
+                                                </div>
+                                                <div class="product_desc">
+                                                    <p><?php echo $row["product_desc"]; ?></p>
+                                                </div>
+                                                <div class="product_price">
+                                                    <p><?php echo $currencySymbol . $row["product_price"]; ?></p>
+                                                </div>
+                                                <div class="order_btn">
+                                                    Add to cart
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php $count++; } ?>
+                                </div>
+                                <div class="swiper-button-next swiper-navBtn"></div>
+                                <div class="swiper-button-prev swiper-navBtn"></div>
+                                <!-- <div class="swiper-scrollbar"></div> -->
+                                <div class="swiper-pagination"></div>
+                            </div>
                         </div>
-                    
+                    </div>               
                 </div>
+
                 <div id="pc_content" class="ca">
                     <p>Protection and Cases</p>
                     <div class="line"></div>
@@ -81,47 +121,10 @@ require('main_header.php');
                 </div>
             </div>
         </div>
-        
-
     </div>
-    <script>
-        //navigate user with slide down animation to content below
-        document.getElementById("scrollDownBtn").addEventListener("click", function() {
-            document.getElementById("content").scrollIntoView({ behavior: "smooth", block: "start" });
-        });
-
-        document.getElementById("ca").addEventListener("click", function() {
-            document.getElementById("ca_content").scrollIntoView({ behavior: "smooth", block: "start" });
-        });
-        
-        document.getElementById("pc").addEventListener("click", function() {
-            document.getElementById("pc_content").scrollIntoView({ behavior: "smooth", block: "start" });
-        });
-        
-        document.getElementById("aa").addEventListener("click", function() {
-            document.getElementById("aa_content").scrollIntoView({ behavior: "smooth", block: "start" });
-        });
-        
-        document.getElementById("sa").addEventListener("click", function() {
-            document.getElementById("sa_content").scrollIntoView({ behavior: "smooth", block: "start" });
-        });
-        
-        document.getElementById("ms").addEventListener("click", function() {
-            document.getElementById("ms_content").scrollIntoView({ behavior: "smooth", block: "start" });
-        });
-        
-        document.getElementById("cm").addEventListener("click", function() {
-            document.getElementById("cm_content").scrollIntoView({ behavior: "smooth", block: "start" });
-        });
-        
-        document.getElementById("ga").addEventListener("click", function() {
-            document.getElementById("ga_content").scrollIntoView({ behavior: "smooth", block: "start" });
-        });
-        
-        document.getElementById("fh").addEventListener("click", function() {
-            document.getElementById("fh_content").scrollIntoView({ behavior: "smooth", block: "start" });
-        });
-    </script>
+    
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
