@@ -120,11 +120,6 @@ h3 {
     padding: 10px 0 0 30px;
 }
 
-.nav_bar .row {
-    display: flex;
-    flex-direction: column;
-}
-
 .flex-container {
     display: flex;
     flex-direction: row;
@@ -242,12 +237,6 @@ h3 {
 }
 
 /*product display css*/
-.ca {
-    height: 700px;
-    padding: 20px;
-    background-color:#fff;
-    margin: 20px 0 20px 0;
-}
 
 .ca p{
     font-size: 20px;
@@ -255,13 +244,13 @@ h3 {
     margin-left: 10px;
 }
 
+/*s*/
 .flexbox-container {
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
     overflow-x: auto;
-    width: 100%; /* Container takes full width of its parent */
-    max-width: 1600px; /* Maximum width of the container to display 4 divs at a time */
-    margin: 0 auto; /* Center the container horizontally */
 }
 
 .flexbox-container > div {
@@ -275,3 +264,4 @@ h3 {
     border-radius: 20px;
     cursor: pointer;   
 }
+/*s*/

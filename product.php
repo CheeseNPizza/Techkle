@@ -25,28 +25,31 @@ require('main_header.php');
                 <div class="nav_bar">
                     <p>Category</p>
                     <div class="flex-container">
-                        <div id="ca"><img src="css/ca.jpg"></div>
-                        <div id="pc"><img src="css/pc.jpg"></div>
-                        <div id="aa"><img src="css/aa.jpg"></div>
-                        <div id="sa"><img src="css/sa3.jpg"></div>
-                        <div id="ms"><img src="css/ms.jpg"></div>
-                        <div id="cm"><img src="css/cm.jpg"></div>
-                        <div id="ga"><img src="css/ga2.jpg"></div>
-                        <div id="fh"><img src="css/fh2.jpg"></div>
-                        <div id="fh"><img src="css/fh2.jpg"></div>
+                        <div id="ca"><img src="css/category_image/ca.jpg"></div>
+                        <div id="pc"><img src="css/category_image/pc.jpg"></div>
+                        <div id="aa"><img src="css/category_image/aa.jpg"></div>
+                        <div id="sa"><img src="css/category_image/sa3.jpg"></div>
+                        <div id="ms"><img src="css/category_image/ms.jpg"></div>
+                        <div id="cm"><img src="css/category_image/cm.jpg"></div>
+                        <div id="ga"><img src="css/category_image/ga2.jpg"></div>
+                        <div id="fh"><img src="css/category_image/fh2.jpg"></div>
+                        <div id="fh"><img src="css/category_image/fh2.jpg"></div>
                     </div>
                 </div>
                 <div id="ca_content" class="ca">
                     <p>Charging Accessories</p>
                     <div class="line"></div>
-                    <div class="flexbox-container">
-                        <div>
-
+                    
+                        <div class="flexbox-container">
+                            
+                            <div>Content 1</div>
+                            <div>Content 2</div>
+                            <div>Content 3</div>
+                            <div>Content 4</div>
+                            <div>Content 4</div>
+                            <!-- Add more divs as needed -->
                         </div>
-                        <div>
-
-                        </div>
-                    </div>
+                    
                 </div>
                 <div id="pc_content" class="ca">
                     <p>Protection and Cases</p>
