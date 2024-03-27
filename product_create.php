@@ -93,7 +93,7 @@ if(isset($_POST['new']) && $_POST['new']==1){
                     <input type="submit" name="submit" value="Submit">
                 </div>
                 <div class="register">
-                    <p>Cancel operation? <a href="product_record.php"> Back </a></p>
+                    <p>View product record? <a href="product_record.php"> Click here </a></p>
                 </div>
             </form>
             <p style="color:#008000;"><?php echo $status; ?></p>   

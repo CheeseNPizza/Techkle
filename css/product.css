@@ -152,8 +152,8 @@ h3 {
 }
 
 .line {
-    height: 1px;
-    background-color: #000;
+    height: 3px;
+    background-color: #005691;
     margin: 10px 0;
 }
 
@@ -238,33 +238,17 @@ h3 {
 /*category css end*/
 
 /*product display css*/
+.space {
+    margin-top: 20px;
+}
+
 .cat_title{
-    font-size: 20px;
+    color: #005691;
+    font-size: 25px;
     font-weight: bold;
     margin-left: 10px;
+    padding-top: 15px;
 }
-
-/*s*/
-/* .flexbox-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-}
-
-.flexbox-container > div {
-    background-color:#005691;
-    width: 400px;
-    height: 600px;
-    margin: 10px;
-    text-align: center;
-    line-height: 50px;
-    font-size: 30px;
-    border-radius: 20px;
-    cursor: pointer;   
-} */
-/*s*/
 
 /* content box start */
 .largest_box { /*body*/
@@ -315,6 +299,7 @@ h3 {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
+    color:#005691;
 }
 
 .card .product_details .product_desc {
@@ -324,15 +309,23 @@ h3 {
 .card .product_details .product_price {
     position: absolute;
     bottom: 80px;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .order_btn {
     font-weight: bold;
-    border: 2px solid black;
+    border: 2px solid #005691;
     border-radius: 20px;
-    padding: 5px;
+    padding: 5px 6px 5px 6px;
     position: absolute;
     bottom: 20px; 
+    color:#005691;
+}
+
+.order_btn:hover {
+    background-color: #005691;
+    color: #fff;
 }
 /* details end*/
 

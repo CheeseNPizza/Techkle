@@ -13,6 +13,7 @@ require('header.php');
     <div class="product_record_title">
         <h2>View Product Records</h2>
         <p><a href = "product_create.php">Create new product</a></p>
+        <p><a href = "product.php">View product page</a></p>
     </div>
     <div class="table_container">
         <table width="100%" border="1" style="border-collapse:collapse;">
