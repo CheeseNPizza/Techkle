@@ -1,6 +1,6 @@
 <?php
 require('database.php');
-require('header.php');
+require('admin_header.php');
 ?>
 <!DOCTYPE html>
 <html>

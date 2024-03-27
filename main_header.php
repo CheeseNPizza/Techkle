@@ -13,8 +13,10 @@ require('database.php');
     <div class="header">
         <img src="css/techkle_logo.png">
         
-        <div class="title">  
-            <p>Cart<i class='bx bx-cart' ></i></p>    
+        <div class="title">
+            <a href="order.php">
+                <p>Cart<i class='bx bx-cart' ></i></p>    
+            </a>
             <a href="login.php">     
                 <p>Login<i class='bx bx-log-in'></i></p>
             </a>

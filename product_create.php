@@ -1,5 +1,5 @@
 <?php
-include("header.php");
+include("admin_header.php");
 require('database.php');
 $status = "";
 if(isset($_POST['new']) && $_POST['new']==1){

@@ -3,8 +3,14 @@
     justify-content: space-between; 
     align-items: center; 
     color: #000000;
-    padding: 30px;
+    padding: 8px 20px 8px 20px;
     background-color: #fff;
+}
+
+.header img{
+    width: 180px;
+    height: 55px;
+    cursor: pointer;
 }
 
 .header p {
@@ -20,5 +26,5 @@ nav a {
 
 nav a:hover {
     text-decoration: underline; 
-    color:#77398f;
+    color:#005691;
 }
