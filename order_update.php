@@ -9,12 +9,21 @@ if (isset($_POST['new']) && $_POST['new'] == 1) {
     $order_ID = $_REQUEST['order_ID'];
     $product_ID = $_REQUEST['product_ID'];
     $quantity = $_REQUEST['quantity'];
-    $unit_price = $_REQUEST['unit_price'];
 
-    $ins_query="INSERT into order_product (`order_ID`,`product_ID`,`quantity`,`unit_price`)
+    $product_query = "SELECT * FROM product WHERE id = $product_ID";
+    $product_result = mysqli_query($con, $product_query) or die(mysqli_error($con));
+    $product_row = mysqli_fetch_assoc($product_result);
+    if ($product_row != NULL) {
+        $unit_price = $product_row['product_price'];
+
+        $ins_query="INSERT into order_product (`order_ID`,`product_ID`,`quantity`,`unit_price`)
                 VALUES ('$order_ID','$product_ID','$quantity','$unit_price')";
-    mysqli_query($con,$ins_query) or die(mysqli_error($con));
-    $status = "Product Record Inserted Successfully.";
+        mysqli_query($con,$ins_query) or die(mysqli_error($con));
+        $status = "Product Record Inserted Successfully.";
+
+    } else {
+        $status = "Product with the ID $product_ID does not exist.";
+    }
 }
 
 if (isset($_POST['Update'])) {
@@ -40,15 +49,18 @@ if (isset($_POST['Delete'])) {
 <html>
 <head>
     <meta charset = "utf-8">
-    
+    <link rel="stylesheet" type="text/css" href="css/order.css">
     <title>Update order</title>
 </head>
 
 <body>
-    <h2>Order ID: <?php echo $_REQUEST['order_ID'] ?></h2>
+    <div class = "container">
+    <div class = "profile"><h2>Order ID: <?php echo $_REQUEST['order_ID'] ?></h2></div>
 
     <p> <?php echo $status; ?> </p>
 
+    <div class = "table">
+    <div class = "table-header">
     <table width="100%" border="1" style="border-collapse:collapse;">
         <thead>
             <tr>
@@ -59,7 +71,7 @@ if (isset($_POST['Delete'])) {
                 <th></th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class = "tbl-content">
         <?php
             if(isset($_GET['order_ID'])) {
                 $count = 1;
@@ -73,13 +85,13 @@ if (isset($_POST['Delete'])) {
                     <tr>
                         <form name="form" method="post" action="">
                         <td align="center"><?php echo $count; ?></td>
-                        <td align="center"><?php echo $row['order_product_ID']; ?></td>
+                        <td align="center"><?php echo $row['product_ID']; ?></td>
                         <td align="center"><input type = "number" name = "quantity" placeholder = "Update Quantity" required value = "<?php echo $row['quantity'];?>"></td>
                         <td align="center"><?php echo $currencySymbol . $row['unit_price']; ?></td>
                         <td align="center">
                         <input type="hidden" name="order_product_ID" value="<?php echo $row['order_product_ID']; ?>">
-                        <input type="submit" name="Update" value="Update">
-                        <input type="submit" name="Delete" value="Delete"
+                        <input class = "table-btn" type="submit" name="Update" value="Update">
+                        <input class = "table-btn" type="submit" name="Delete" value="Delete"
                             onclick="return confirm('Are you sure you want to delete this product?')">
                         </form>
                         </td>
@@ -104,9 +116,11 @@ if (isset($_POST['Delete'])) {
             $display_style = ($_POST['toggle'] == 'hide') ? 'none' : 'block';
         }
     ?>
+    </div>
+    </div>
     <p><strong>Insert new product</strong></p>
     <form method="post">
-        <button type="submit" name="toggle" value="<?php echo ($display_style == 'block') ? 'hide' : 'show'; ?>">
+        <button class = "table-btn" type="submit" name="toggle" value="<?php echo ($display_style == 'block') ? 'hide' : 'show'; ?>">
             <?php echo ($display_style == 'block') ? 'Hide' : 'Show'; ?>: Insert new product
         </button>
     </form>
@@ -115,12 +129,11 @@ if (isset($_POST['Delete'])) {
             <input type = "hidden" name = "new" value = "1"/>
             <p>Product ID: <input type="text" name="product_ID" placeholder="Enter product ID" required/></p>
             <p>Quantity: <input type="text" name="quantity" placeholder="Enter quantity" required/></p>
-            <p>Unit Price: RM<input type="text" name="unit_price" placeholder="Enter unit price" required/></p>
-            <p><input name="submit" type="submit" value="Submit" />
-                <input name="reset" type="reset" value="Reset" /></p>
+            <p><input class = "table-btn" name="submit" type="submit" value="Submit" />
+                <input class = "table-btn" name="reset" type="reset" value="Reset" /></p>
         </form>
     </div>
-    <hr>
-    <a href = "order.php">Back to order</a>
+    <br><hr><br>
+    <a class ="table-btn" href = "order.php">Back to order</a>
 </body>
 </html>

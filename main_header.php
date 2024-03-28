@@ -11,7 +11,7 @@ require('database.php');
 </head>
 <body>
     <div class="header">
-        <img src="css/techkle_logo.png">
+        <a href = "index.php"><img src="css/techkle_logo.png"></a>
         
         <div class="title">
             <a href="order.php">
