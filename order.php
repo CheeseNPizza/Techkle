@@ -10,24 +10,26 @@ $status = "";
 <head>
     <meta charset = "utf-8">
     <link rel="stylesheet" type="text/css" href="css/order.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!--to use boxicons icons-->
     <title>Orders</title>
 </head>
 
 <body>
-    <div>
-        <h2>Order History</h2>
-            <p><strong>User ID: <?php echo $_SESSION['customer_ID']; ?> 
-            | Username: <?php echo $_SESSION['customer_name']; ?></strong></p>
-        <p>
-            <a href = "order_create.php">Create new order</a>
-        </p>
+    <div class= "container">
+        <h2 class = "page-title">Order History</h2>
+        <div class = "profile">
+            <p class = "profile-name">User ID: <?php echo $_SESSION['customer_ID']; ?> 
+            <br>Username: <?php echo $_SESSION['customer_name']; ?></p>
+        </div>
 
-        <p> <?php echo $status; ?> </p>
-
+            <p><a href = "order_create.php">Create new order</a></p>
+            <p> <?php echo $status; ?> </p>
+        <div class = "table">
+        <div class = "table-header">
         <table width="100%" border="1" style="border-collapse:collapse;">
             <thead class="tbl-header">
                 <tr>
-                    <th><strong>Order ID</strong></th>
+                    <th class = "header-cell"><strong>Order ID</strong></th>
                     <th><strong>Date and Time</strong></th>
                     <th><strong>Total Price</strong></th>
                     <th><strong>Status</strong></th>
@@ -35,6 +37,7 @@ $status = "";
                     <th></th>
                 </tr>
             </thead>
+        </div>
             <tbody class="tbl-content">
             <?php
                 $sel_query = "SELECT * FROM `order` WHERE user_ID = '{$_SESSION['customer_ID']}' ORDER BY order_ID DESC;";
@@ -48,9 +51,9 @@ $status = "";
                     <td align="center"><?php echo $row['status']; ?></td>
                     <?php if ($row['status'] == "Pending") { ?>
                     <td align="center">
-                        <a href="order_view.php?order_ID=<?php echo $row['order_ID']; ?>">View</a>
-                        <a href="order_update.php?order_ID=<?php echo $row['order_ID']; ?>">Update</a>
-                        <a href="order_delete.php?order_ID=<?php echo $row['order_ID']; ?>"
+                        <a class = "table-btn" href="order_view.php?order_ID=<?php echo $row['order_ID']; ?>">View</a>
+                        <a class = "table-btn" href="order_update.php?order_ID=<?php echo $row['order_ID']; ?>">Update</a>
+                        <a class = "table-btn" href="order_delete.php?order_ID=<?php echo $row['order_ID']; ?>"
                             onclick="return confirm('Are you sure you want to delete this order?')">Delete</a>
                     </td>
                     <td align="center">
@@ -64,6 +67,7 @@ $status = "";
             <?php } } ?>
             </tbody>
         </table>
+        </div>
     </div>
     
 </body>
