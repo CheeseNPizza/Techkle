@@ -1,5 +1,5 @@
 <?php
-include("header.php");
+include("main_header.php");
 require('database.php');
 $customer_ID = $_SESSION['customer_ID'];
 $total_price = 0;
