@@ -30,7 +30,7 @@ table {
 }
 
 .tbl-header {
-    background-color: #525CEB;
+    background-color: #005691;
     border: #EEF5FF;
 }
 
@@ -48,7 +48,7 @@ th {
     font-weight: 500;
     font-size: auto;
     color: #fff;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 td {
@@ -67,7 +67,7 @@ td {
     font-weight: 500;
     font-size: auto;
     color: #3D3B40;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 /* demo styles */
@@ -106,7 +106,7 @@ select {
 }
 
 input[type="submit"] {
-    background-color: #525CEB;
+    background-color: #005691;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -117,7 +117,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #3d48cc;
+    background-color: #005691;
 }
 
 /* follow me template */
