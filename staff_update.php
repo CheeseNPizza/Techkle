@@ -28,7 +28,7 @@
         }
 
         // Validate staffEmail
-        if (empty($staffEmail) || !filter_var($staffEmail, FILTER_VALIDATE_EMAIL) || !strpos($staffEmail, '@zte.com')) {
+        if (empty($staffEmail) || !filter_var($staffEmail, FILTER_VALIDATE_EMAIL) || !strpos($staffEmail, '@techkle.com')) {
             $errors[] = "Valid Staff Email is required.";
         }
 

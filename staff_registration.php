@@ -8,6 +8,7 @@
 </head>
 <body>
     <?php
+        include("staff_header.php");
         require('staff_database.php');
 
         if (isset($_POST['submit'])){
@@ -22,8 +23,8 @@
 
             // Validate staff email
             $staffEmail = trim($_POST['staffEmail']);
-            if (!filter_var($staffEmail, FILTER_VALIDATE_EMAIL) || !strpos($staffEmail, '@zte.com')) {
-                $errors[] = "Email is not valid or doesn't belong to @zte.com domain.";
+            if (!filter_var($staffEmail, FILTER_VALIDATE_EMAIL) || !strpos($staffEmail, '@techkle.com')) {
+                $errors[] = "Email is not valid or doesn't belong to @techkle.com domain.";
             }
 
             // Check if email already exists in the staff table

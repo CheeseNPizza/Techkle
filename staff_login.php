@@ -1,12 +1,15 @@
 <?php
     session_start();
+
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <title>Staff Login</title>
         <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" type="text/css" href="css/admin_header.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!--to use boxicons icons-->
     </head>
     <body>
@@ -20,8 +23,8 @@
             $password = mysqli_real_escape_string($con, $_POST['password']);
 
             // Data Validation
-            if (!filter_var($staffEmail, FILTER_VALIDATE_EMAIL) || !strpos($staffEmail, '@zte.com')) {
-                $errors[] = "Email is not valid or doesn't belong to @zte.com domain.";
+            if (!filter_var($staffEmail, FILTER_VALIDATE_EMAIL) || !strpos($staffEmail, '@techkle.com')) {
+                $errors[] = "Email is not valid or doesn't belong to @techkle.com domain.";
             }
 
             if (strlen($password) < 6) {
@@ -63,6 +66,9 @@
         }
     ?>
     <div class="container">
+    <div class="header">
+    <img src="css/techkle_logo.png">
+        </div>
     <div class="child">
         <div class="wrapper">
             <h1>Staff Log In</h1>
@@ -91,6 +97,9 @@
                 </div>
                 <div class="loginbtn">
                     <input name="submit" type="submit" value="Login" />
+                </div>
+                <div class="register">
+                        <p>Login as a customer? <a href="login.php"> Click here </a></p>
                 </div>
             </form>
         </div>
