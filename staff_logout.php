@@ -16,6 +16,6 @@
     session_destroy();
     $cookie_name = "staffEmail";
     setcookie($cookie_name, "", time() - 3600, "/");
-    header("Location: staff_login.php");
+    header("Location: product.php");
     exit();
 ?>

@@ -1,16 +1,6 @@
 <?php
-session_start();
-?>
-<!DOCTYPE HTML>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <title>User Login Form</title>
-    <link rel="stylesheet" href="css/login.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!--to use boxicons icons-->
-</head>
-<body>
-    <?php
+    session_start();
+
     require('database.php');
 
     if(isset($_POST['customer_name']))
@@ -43,7 +33,7 @@ session_start();
                 $expiration_time = time() + 60 * 60 * 24 * 30;
                 setcookie($cookie_name, $cookie_value, $expiration_time, "/");
             }
-            header("Location: index.php"); //navigate to main page
+            header("Location: product.php"); //navigate to main page
             exit();
         }
         else {
@@ -57,47 +47,5 @@ session_start();
             session_destroy();
         }
     }
-    ?>
+?>
 
-    <div class="container">
-        <div class="header">
-            account name
-        </div>
-        <div class="child">
-            <div class="wrapper">
-                <form action="" method="post" name="login">
-                    <h1>User Login</h1>
-
-                    <div class="input-box">
-                        <input type="text" name="customer_name" placeholder="Username" required /><br>
-                        <i class='bx bx-user'></i>
-                    </div>
-
-                    <div class="input-box">
-                        <input type="password" name="password" placeholder="Password" required /><br>
-                        <i class='bx bx-lock'></i>
-                    </div>
-
-                    <div class="forgot">
-                        <label><input type="checkbox" name="remember_me" id="remember_me">Remember Me</label>
-                    </div>
-
-                    <div class="loginbtn">
-                        <input name="submit" type="submit" value="Login" />
-                    </div>
-                    
-                    <div class="register">
-                        <p>Don't have an account? <a href="registration.php"> Register </a></p>
-                    </div>
-                    <div class="register">
-                        <p>Login as a staff? <a href="staff_login.php"> Click here </a></p>
-                    </div>
-                </form>
-            </div>
-        </div>
-        
-    </div>
-    
-
-</body>
-</html>

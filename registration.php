@@ -58,7 +58,7 @@ if (isset($_REQUEST['customer_name'])){
                 </div>
 
                 <div class="register">
-                    <p>Already have an account? <a href="login.php">Login</a></p>
+                    <p>Cancel operation? <a href="product.php">Click here</a></p>
                 </div>
             </form>
         </div>

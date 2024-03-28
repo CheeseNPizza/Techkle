@@ -1,5 +1,5 @@
 <?php
-require("main_header.php");
+require("admin_header.php");
 
 if(isset($_COOKIE["user"])) {
     $cookie_value = $_COOKIE["user"];
