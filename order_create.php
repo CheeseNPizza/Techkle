@@ -1,14 +1,24 @@
 <?php
 include("auth.php");
 require("database.php");
-$customer_ID = $_SESSION['customer_ID'];
-$status = "Pending";
-$created_at = date("Y-m-d H:i:s");
 
-$ins_query = "INSERT INTO `order` (`user_ID`, `status`, `created_at`) 
-                VALUES ('$customer_ID', '$status', '$created_at')";
+$check_query = "SELECT * FROM `order` WHERE status = 'Pending';";
+$check_result = mysqli_query($con, $check_query) or die(mysqli_error($con));
+$check_row = mysqli_fetch_assoc($check_result);
+if ($check_row == NULL) {
 
-mysqli_query($con,$ins_query) or die(mysqli_error($con));
-header("Location: order.php");
-exit();
+    $customer_ID = $_SESSION['customer_ID'];
+    $status = "Pending";
+    $created_at = date("Y-m-d H:i:s");
+
+    $ins_query = "INSERT INTO `order` (`user_ID`, `status`, `created_at`) 
+                    VALUES ('$customer_ID', '$status', '$created_at')";
+
+    mysqli_query($con, $ins_query) or die(mysqli_error($con));
+    header("Location: order.php");
+    exit();
+} else {
+    header("Location: order.php");
+    exit();
+}
 ?>

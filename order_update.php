@@ -10,16 +10,32 @@ if (isset($_POST['new']) && $_POST['new'] == 1) {
     $product_ID = $_REQUEST['product_ID'];
     $quantity = $_REQUEST['quantity'];
 
+
     $product_query = "SELECT * FROM product WHERE id = $product_ID";
     $product_result = mysqli_query($con, $product_query) or die(mysqli_error($con));
     $product_row = mysqli_fetch_assoc($product_result);
     if ($product_row != NULL) {
+
+        $check_query = "SELECT * FROM order_product WHERE order_ID = $order_ID AND product_ID = $product_ID;";
+        $check_result = mysqli_query($con, $check_query) or die(mysqli_error($con));
+        $check_row = mysqli_fetch_assoc($check_result);
+
         $unit_price = $product_row['product_price'];
 
-        $ins_query="INSERT into order_product (`order_ID`,`product_ID`,`quantity`,`unit_price`)
-                VALUES ('$order_ID','$product_ID','$quantity','$unit_price')";
-        mysqli_query($con,$ins_query) or die(mysqli_error($con));
-        $status = "Product Record Inserted Successfully.";
+        //Check if the order product is already exist
+        if ($check_row != NULL) {
+            $new_quantity = $quantity + $check_row['quantity'];
+
+            $upd_query="UPDATE order_product SET quantity = '".$new_quantity."' WHERE order_product_ID='".$check_row['order_product_ID']."';";
+            mysqli_query($con, $upd_query) or die(mysqli_error($con));
+            $status = "Product Record Updated Successfully.";
+
+        } else {
+            $ins_query="INSERT into order_product (`order_ID`,`product_ID`,`quantity`,`unit_price`)
+                    VALUES ('$order_ID','$product_ID','$quantity','$unit_price')";
+            mysqli_query($con,$ins_query) or die(mysqli_error($con));
+            $status = "Product Record Inserted Successfully.";
+        }
 
     } else {
         $status = "Product with the ID $product_ID does not exist.";

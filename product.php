@@ -1,6 +1,7 @@
 <?php
 require('database.php');
 require('main_header.php');
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -68,7 +69,8 @@ require('main_header.php');
                                                     <p><?php echo $currencySymbol . $row["product_price"]; ?></p>
                                                 </div>
                                                 <div class="order_btn">
-                                                    Add to cart
+                                                    <a href = "product_insert.php?product_ID=<?php echo $row['id']; ?>"
+                                                    onclick="return confirm('Confirm adding this product to your cart?')">Add to cart</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -112,7 +114,8 @@ require('main_header.php');
                                                     <p><?php echo $currencySymbol . $row["product_price"]; ?></p>
                                                 </div>
                                                 <div class="order_btn">
-                                                    Add to cart
+                                                    <a href = "product_insert.php?product_ID=<?php echo $row['id']; ?>"
+                                                    onclick="return confirm('Confirm adding this product to your cart?')">Add to cart</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -156,7 +159,8 @@ require('main_header.php');
                                                     <p><?php echo $currencySymbol . $row["product_price"]; ?></p>
                                                 </div>
                                                 <div class="order_btn">
-                                                    Add to cart
+                                                    <a href = "product_insert.php?product_ID=<?php echo $row['id']; ?>"
+                                                    onclick="return confirm('Confirm adding this product to your cart?')">Add to cart</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -200,7 +204,8 @@ require('main_header.php');
                                                     <p><?php echo $currencySymbol . $row["product_price"]; ?></p>
                                                 </div>
                                                 <div class="order_btn">
-                                                    Add to cart
+                                                    <a href = "product_insert.php?product_ID=<?php echo $row['id']; ?>"
+                                                    onclick="return confirm('Confirm adding this product to your cart?')">Add to cart</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -244,7 +249,8 @@ require('main_header.php');
                                                     <p><?php echo $currencySymbol . $row["product_price"]; ?></p>
                                                 </div>
                                                 <div class="order_btn">
-                                                    Add to cart
+                                                    <a href = "product_insert.php?product_ID=<?php echo $row['id']; ?>"
+                                                    onclick="return confirm('Confirm adding this product to your cart?')">Add to cart</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -288,7 +294,8 @@ require('main_header.php');
                                                     <p><?php echo $currencySymbol . $row["product_price"]; ?></p>
                                                 </div>
                                                 <div class="order_btn">
-                                                    Add to cart
+                                                    <a href = "product_insert.php?product_ID=<?php echo $row['id']; ?>"
+                                                    onclick="return confirm('Confirm adding this product to your cart?')">Add to cart</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -332,7 +339,8 @@ require('main_header.php');
                                                     <p><?php echo $currencySymbol . $row["product_price"]; ?></p>
                                                 </div>
                                                 <div class="order_btn">
-                                                    Add to cart
+                                                    <a href = "product_insert.php?product_ID=<?php echo $row['id']; ?>"
+                                                    onclick="return confirm('Confirm adding this product to your cart?')">Add to cart</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -376,7 +384,8 @@ require('main_header.php');
                                                     <p><?php echo $currencySymbol . $row["product_price"]; ?></p>
                                                 </div>
                                                 <div class="order_btn">
-                                                    Add to cart
+                                                    <a href = "product_insert.php?product_ID=<?php echo $row['id']; ?>"
+                                                    onclick="return confirm('Confirm adding this product to your cart?')">Add to cart</a>
                                                 </div>
                                             </div>
                                         </div>
