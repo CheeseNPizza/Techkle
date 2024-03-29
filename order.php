@@ -22,7 +22,6 @@ $status = "";
         <!-- content -->
         <div class="child">
             <div class="wrapper">
-                <p class="close">X</p>
                 <h1>User Login</h1>
                 <form action="login.php" method="post" name="login">
                     <div class="input-box">
@@ -55,12 +54,18 @@ $status = "";
         <script>
             document.querySelector(".popup").style.display="flex";
         </script>
-    <?php } else { ?>
+    <?php } ?>
     <div class= "container">
         <h2 class = "page-title">Order History</h2>
         <div class = "profile">
-            <p class = "profile-name">User ID: <?php echo $_SESSION['customer_ID']; ?> 
-            <br>Username: <?php echo $_SESSION['customer_name']; ?></p>
+            <p class = "profile-name">User ID: 
+                <?php 
+                if(isset($_SESSION["customer_ID"])) {
+                    echo $_SESSION['customer_ID']; } ?> 
+            <br>Username: 
+                <?php 
+                if(isset($_SESSION["customer_ID"])) {
+                    echo $_SESSION['customer_name']; }?></p>
         </div>
 
             <p><a class = "table-btn" href = "order_create.php">Create new order</a></p>
@@ -81,9 +86,10 @@ $status = "";
         </div>
             <tbody class="tbl-content">
             <?php
-                $sel_query = "SELECT * FROM `order` WHERE user_ID = '{$_SESSION['customer_ID']}' ORDER BY order_ID DESC;";
-                $result = mysqli_query($con,$sel_query);
-                while($row = mysqli_fetch_assoc($result)) {
+                if(isset($_SESSION["customer_ID"])) {
+                    $sel_query = "SELECT * FROM `order` WHERE user_ID = '{$_SESSION['customer_ID']}' ORDER BY order_ID DESC;";
+                    $result = mysqli_query($con,$sel_query);
+                    while($row = mysqli_fetch_assoc($result)) {
             ?>
                 <tr>
                     <td align="center"><?php echo $row['order_ID']; ?></td>
@@ -105,7 +111,7 @@ $status = "";
                         <td></td>
                         <td></td>
                 </tr>
-            <?php } } }?>
+            <?php } } } ?>
             </tbody>
         </table>
         </div>
