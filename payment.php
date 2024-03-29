@@ -20,11 +20,29 @@ if(isset($_GET['order_ID'])) {
 if(isset($_POST['new']) && $_POST['new']==1)
 {
 //update customer table
-$address=$_REQUEST['address'];
+//combine address fields
+$street = $_POST['street'];
+$city = $_POST['city'];
+$state = $_POST['state'];
+$zip = $_POST['zip'];
+$country = $_POST['country'];
+
+$address = $street . " " . $zip . " " . $city . ", " . $state . ", "  . $country;
+
 $phone =$_REQUEST['phone'];
 $update1="UPDATE customer SET `phone_number`='".$phone."',
 address='".$address."'  WHERE customer_ID='".$customer_ID."'";
 mysqli_query($con, $update1) or die(mysqli_error($con));
+
+// Set cookies for address fields
+setcookie('user_street', $street, time() + (86400 * 30), "/"); // 30 days expiry
+setcookie('user_city', $city, time() + (86400 * 30), "/"); // 30 days expiry
+setcookie('user_state', $state, time() + (86400 * 30), "/"); // 30 days expiry
+setcookie('user_zip', $zip, time() + (86400 * 30), "/"); // 30 days expiry
+setcookie('user_country', $country, time() + (86400 * 30), "/"); // 30 days expiry
+
+// Set cookies for phone number
+setcookie('user_phone', $phone, time() + (86400 * 30), "/"); // Phone number cookie expires in 30 days
 
 //insert payment table
 //$order_ID = $_REQUEST['order_ID'];
@@ -54,10 +72,16 @@ header("Location: payment_success.php");
     <meta charset="utf-8">
     <title>Payment</title>
     <link rel="stylesheet" href="css/payment.css">
+    <link rel="stylesheet" href="css/address_input.css">
+    
     
 </head>
 <body>
     <h1 align="center">Checkout for order ID: <?php echo $order_ID?></h1>
+    <div class="button-link">
+    <a href='order.php'>Back to Order</a>
+</div>
+    
     <div class="order_detail_title">
         <h2>Order Summary</h2>
     </div>
@@ -105,27 +129,52 @@ header("Location: payment_success.php");
     <div class="form">
  <h2>Billing Information</h2>
  <div class="form-container">
-        <form name="form" action="" method="post" >
-        <input type="hidden" name="new" value="1" />
-            <label for="address">Address:</label>
-            <input type="text" id="address" name="address" required>
+ <form name="form" action="" method="post">
+    <input type="hidden" name="new" value="1" />
+    <label for="street">Street Address:</label>
+    <input type="text" id="street" name="street" placeholder="Street Address" value="<?php echo isset($_COOKIE['user_street']) ? $_COOKIE['user_street'] : ''; ?>" required>
 
-            <label for="phone">Phone Number:</label>
-            <input type="text" id="phone" name="phone" required>
+    <div class="city-state">
+        <div class="city">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" placeholder="City" value="<?php echo isset($_COOKIE['user_city']) ? $_COOKIE['user_city'] : ''; ?>" required>
+        </div>
+        
+        <div class="state">
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" placeholder="State" value="<?php echo isset($_COOKIE['user_state']) ? $_COOKIE['user_state'] : ''; ?>" required>
+        </div>
+    </div>
 
-            <label for="paymentmethod">Payment Method:</label>
-            <select id="paymentmethod" name="paymentmethod" required>
-                <option value="">Select Payment Method</option>
-                <option value="credit_card">Credit Card</option>
-                <option value="touchngo">Touch N Go</option>
-                <option value="bank_transfer">Bank Transfer</option>
-            </select>
+    <div class="zip-country">
+        <div class="zip">
+            <label for="zip">Zip Code:</label>
+            <input type="text" id="zip" name="zip" placeholder="Zip Code" value="<?php echo isset($_COOKIE['user_zip']) ? $_COOKIE['user_zip'] : ''; ?>" required>
+        </div>
+        <div class="country">
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" placeholder="Country" value="<?php echo isset($_COOKIE['user_country']) ? $_COOKIE['user_country'] : ''; ?>" required>
+        </div>
+    </div>
 
-            <input name="submit" type="submit" value="Make Payment">
-        </form>
+    <label for="phone">Phone Number:</label>
+    <input type="text" id="phone" name="phone" placeholder="XXX-XXX XXXX" pattern="\d{3}-\d{3} \d{4}" 
+           title="XXX-XXX XXXX  E.g. 012-345 6789" value="<?php echo isset($_COOKIE['user_phone']) ? $_COOKIE['user_phone'] : ''; ?>" required>
+
+    <label for="paymentmethod">Payment Method:</label>
+    <select id="paymentmethod" name="paymentmethod" required>
+        <option value="">Select Payment Method</option>
+        <option value="credit_card">Credit Card</option>
+        <option value="touchngo">Touch N Go</option>
+        <option value="bank_transfer">Bank Transfer</option>
+    </select>
+
+    <input name="submit" type="submit" value="Make Payment">
+</form>
+
     </div>
     <br>
- <p><a href='order.php'>Back to Order</a></p>
+ <!--<p><a href='order.php'>Back to Order</a></p>-->
  <br>
  <br>
  </div>
