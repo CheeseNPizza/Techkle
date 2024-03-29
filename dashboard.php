@@ -74,7 +74,7 @@ require("admin_header.php");
             <div class="content">
                 <a href="product.php">Main page</a>
                 <a href="product_record.php">Product record</a>
-                <a href="order.php">Order</a>
+                <a href="admin_order.php">Order</a>
             </div>
         </div>
     </div>
