@@ -7,6 +7,7 @@ include("main_header.php");
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Successful Payment</title>
+
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -38,13 +39,34 @@ include("main_header.php");
     font-size: 30px;
     color: #333;
   }
+
+  .button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    background-color:#005691;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-link:hover {
+    background-color: #004e7b;
+}
+
+a{
+    color:#fff;
+    text-decoration: none;
+    
+}
 </style>
 </head>
 <body>
   <div class="checkmark">
     <i class="fas fa-check">✔</i>
   </div>
-  <div class="message">Successful Payment</div>
-  <p><a href='product.php'>Back to Home</a></p>
+  <div class="message">Thank you! Successful Payment</div>
+  <p><div class=button-link> <a href='product.php'>Back to Home</a></div></p>
 </body>
 </html>

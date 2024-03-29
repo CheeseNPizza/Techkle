@@ -1,0 +1,37 @@
+form {
+    /*display: flex;*/
+    flex-direction: column;
+    
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+.city-state {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.zip-country {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.city {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.state,
+.zip {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.country {
+    flex:1;
+    margin-bottom: 10px;
+}
