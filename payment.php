@@ -115,7 +115,7 @@ header("Location: payment_success.php");
                     <tr>
                         <td align="center"><?php echo $count; ?></td>
                         <td align="center"><?php echo $row['created_at']; ?></td>
-                        <td align="center"><?php echo $row['order_product_ID']; ?></td>
+                        <td align="center"><?php echo $row['product_ID']; ?></td>
                         <td align="center"><?php echo $product_row['product_name']; ?></td>
                         <td align="center"><img width="100" height="100" src="product_image/<?php echo $product_row['product_image']; ?>"/></td>
                         <td align="center"><?php echo $row['quantity']; ?></td>                          
