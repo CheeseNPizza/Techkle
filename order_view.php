@@ -1,5 +1,6 @@
 <?php
 require("main_header.php");
+require('database.php');
 
 $currencySymbol = "RM";
 $total_price = 0;
