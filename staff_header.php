@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="css/admin_header.css">
+    <link rel="stylesheet" type="text/css" href="css/staff_header.css">
 </head>
 <body>
     <div class="header">
