@@ -35,6 +35,10 @@ $update1="UPDATE customer SET `phone_number`='".$phone."',
 address='".$address."'  WHERE customer_ID='".$customer_ID."'";
 mysqli_query($con, $update1) or die(mysqli_error($con));
 
+// Set cookies for address and phone number
+setcookie('user_address', $address, time() + (86400 * 30), "/"); // Address cookie expires in 30 days
+setcookie('user_phone', $phone, time() + (86400 * 30), "/"); // Phone number cookie expires in 30 days
+
 //insert payment table
 //$order_ID = $_REQUEST['order_ID'];
 $payment_date = date("Y-m-d H:i:s");
