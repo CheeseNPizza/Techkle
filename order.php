@@ -16,6 +16,46 @@ $status = "";
 </head>
 
 <body>
+    <?php 
+        if(!isset($_SESSION["customer_ID"])) { ?>
+            <div class="popup">
+        <!-- content -->
+        <div class="child">
+            <div class="wrapper">
+                <p class="close">X</p>
+                <h1>User Login</h1>
+                <form action="login.php" method="post" name="login">
+                    <div class="input-box">
+                        <input type="text" name="customer_name" placeholder="Username" required /><br>
+                        <i class='bx bx-user'></i>
+                    </div>
+
+                    <div class="input-box">
+                        <input type="password" name="password" placeholder="Password" required /><br>
+                        <i class='bx bx-lock'></i>
+                    </div>
+
+                    <div class="forgot">
+                        <label><input type="checkbox" name="remember_me" id="remember_me">Remember Me</label>
+                    </div>
+
+                    <div class="loginbtn">
+                        <input name="submit" type="submit" value="Login" />
+                    </div>
+                    
+                    <div class="register">
+                        <p>Don't have an account? <a href="registration.php"> Register </a></p>
+                    </div>
+                    <div class="register">
+                        <p>Login as a staff? <a href="staff_login.php"> Click here </a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script>
+            document.querySelector(".popup").style.display="flex";
+        </script>
+    <?php } else { ?>
     <div class= "container">
         <h2 class = "page-title">Order History</h2>
         <div class = "profile">
@@ -65,7 +105,7 @@ $status = "";
                         <td></td>
                         <td></td>
                 </tr>
-            <?php } } ?>
+            <?php } } }?>
             </tbody>
         </table>
         </div>
