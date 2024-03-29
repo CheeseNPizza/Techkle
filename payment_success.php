@@ -43,18 +43,18 @@ include("main_header.php");
 
   .button-link {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 5px 10px;
     text-decoration: none;
     text-align: center;
-    color: #fff;
-    background-color:#005691;
-    border-radius: 5px;
+    color: #ffffff;
+    background-color: #000000;
+    border-radius: 3px;
     cursor: pointer;
     margin-bottom: 30px;
 }
 
 .button-link:hover {
-    background-color: #004e7b;
+    background-color: #45a049;
 }
 
 a{
@@ -62,6 +62,8 @@ a{
     text-decoration: none;
 
 }
+
+
 </style>
 </head>
 <body>

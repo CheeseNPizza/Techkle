@@ -71,7 +71,7 @@ header("Location: payment_success.php");
 <head>
     <meta charset="utf-8">
     <title>Payment</title>
-    <link rel="stylesheet" href="css/payment.css">
+    <link rel="stylesheet" href="css/paymenttest.css">
     <link rel="stylesheet" href="css/address_input.css">
     
     
@@ -93,6 +93,8 @@ header("Location: payment_success.php");
                 <th><strong>No.</strong></th>
                 <th><strong>Order Date & Time</strong></th>
                 <th><strong>Product ID</strong></th>
+                <th><strong>Product Name</strong></th>
+                <th><strong>Product Image</strong></th>
                 <th><strong>Quantity</strong></th>             
                 <th><strong>Unit Price</strong></th>
             </tr>
@@ -106,11 +108,16 @@ header("Location: payment_success.php");
                 $result = mysqli_query($con, $sel_query) or die ( mysqli_error($con));
 
                 while($row = mysqli_fetch_assoc($result)) {
+                    $product_query = "SELECT * FROM product WHERE id = " . $row['product_ID'] . ";";
+                    $product_result = mysqli_query($con, $product_query);
+                    $product_row = mysqli_fetch_assoc($product_result);
                 ?>
                     <tr>
                         <td align="center"><?php echo $count; ?></td>
                         <td align="center"><?php echo $row['created_at']; ?></td>
                         <td align="center"><?php echo $row['order_product_ID']; ?></td>
+                        <td align="center"><?php echo $product_row['product_name']; ?></td>
+                        <td align="center"><img width="100" height="100" src="product_image/<?php echo $product_row['product_image']; ?>"/></td>
                         <td align="center"><?php echo $row['quantity']; ?></td>                          
                         <td align="center"><?php echo $currencySymbol . $row['unit_price']; ?></td>
                     </tr>
@@ -121,7 +128,7 @@ header("Location: payment_success.php");
                 
         </tbody>
         <tfoot>
-            <td colspan  = "4" align="right" class="tf">Total Price:</td>
+            <td colspan  = "6" align="right" class="tf">Total Price:</td>
             <td colspan = "1" align="center"><?php echo $currencySymbol . number_format($total_price, 2); ?></td>
         </tfoot>
     </table>

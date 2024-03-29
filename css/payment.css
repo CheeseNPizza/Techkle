@@ -44,15 +44,15 @@ table {
 
 .tbl-header {
     background-color: #005691;
-    border: #EEF5FF;
+    border: #fff;
 }
 
 .tbl-content {
     height: 300px;
     overflow-x: auto;
     margin-top: 0px;
-    background-color: #EEF5FF;
-    border: #EEF5FF;
+    background-color: #fff;
+    border: #fff;
 }
 
 th {
@@ -87,7 +87,7 @@ td {
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
 
 body {
-    background: #f2f2f2;
+    background: #fff;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -96,7 +96,7 @@ section {
 }
 
 .form-container {
-    background-color: #EEF5FF;
+    background-color: #fff;
     padding: 20px;
     margin-top: 20px;
 }
