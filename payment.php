@@ -174,9 +174,9 @@ header("Location: payment_success.php");
 
     </div>
     <br>
- <!--<p><a href='order.php'>Back to Order</a></p>-->
  <br>
  <br>
  </div>
+ <?php require('footer.php');?>
 </body>
 </html>

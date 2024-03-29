@@ -36,6 +36,7 @@ include("main_header.php");
 
   .message {
     margin-top: 30px;
+    margin-bottom: 30px;
     font-size: 30px;
     color: #333;
   }
@@ -49,6 +50,7 @@ include("main_header.php");
     background-color:#005691;
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 30px;
 }
 
 .button-link:hover {
@@ -58,7 +60,7 @@ include("main_header.php");
 a{
     color:#fff;
     text-decoration: none;
-    
+
 }
 </style>
 </head>
@@ -68,5 +70,6 @@ a{
   </div>
   <div class="message">Thank you! Successful Payment</div>
   <p><div class=button-link> <a href='product.php'>Back to Home</a></div></p>
+  <?php require('footer.php');?>
 </body>
 </html>
