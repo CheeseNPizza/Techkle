@@ -1,6 +1,6 @@
 <?php
-    session_start();
-
+    // session_start();
+    require("admin_header.php");
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +9,7 @@
         <meta charset="utf-8">
         <title>Staff Login</title>
         <link rel="stylesheet" href="css/login.css">
-        <link rel="stylesheet" type="text/css" href="css/admin_header.css">
+        <!-- <link rel="stylesheet" type="text/css" href="css/admin_header.css"> -->
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!--to use boxicons icons-->
     </head>
     <body>
@@ -65,45 +65,41 @@
             session_destroy();
         }
     ?>
-    <div class="container">
-    <div class="header">
-    <img src="css/techkle_logo.png">
-        </div>
-    <div class="child">
-        <div class="wrapper">
-            <h1>Staff Log In</h1>
-            <?php 
-                // Display errors if any
-                if (!empty($errors)) {
-                    echo "<div class='errors'>";
-                    foreach ($errors as $error) {
-                        echo "<p>Error: $error</p>";
+        <div class="child">
+            <div class="wrapper">
+                <h1>Staff Log In</h1>
+                <?php 
+                    // Display errors if any
+                    if (!empty($errors)) {
+                        echo "<div class='errors'>";
+                        foreach ($errors as $error) {
+                            echo "<p>Error: $error</p>";
+                        }
+                        echo "</div>";
                     }
-                    echo "</div>";
-                }
-            ?>
-            <form action="" method="post" name="login">
-                <div class="input-box">
-                    <input type="email" name="staffEmail" placeholder="Staff Email" required />
-                    <i class='bx bx-mail-send'></i>
-                </div>
-                <div class="input-box">
-                    <input type="password" name="password" placeholder="Password" required />
-                    <i class='bx bx-lock'></i>
-                </div>
-                <div class="forgot">
-                    <input type="checkbox" name="remember_me" id="remember_me">
-                    <label for="remember_me">Remember Me</label>
-                </div>
-                <div class="loginbtn">
-                    <input name="submit" type="submit" value="Login" />
-                </div>
-                <div class="register">
-                        <p>Login as a customer? <a href="login.php"> Click here </a></p>
-                </div>
-            </form>
+                ?>
+                <form action="" method="post" name="login">
+                    <div class="input-box">
+                        <input type="email" name="staffEmail" placeholder="Staff Email" required />
+                        <i class='bx bx-mail-send'></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" name="password" placeholder="Password" required />
+                        <i class='bx bx-lock'></i>
+                    </div>
+                    <div class="forgot">
+                        <input type="checkbox" name="remember_me" id="remember_me">
+                        <label for="remember_me">Remember Me</label>
+                    </div>
+                    <div class="loginbtn">
+                        <input name="submit" type="submit" value="Login" />
+                    </div>
+                    <div class="register">
+                            <p>Login as a customer? <a href="login.php"> Click here </a></p>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
 </div>
 
     </body>
