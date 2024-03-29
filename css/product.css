@@ -45,6 +45,11 @@ body {
     font-size: 17px;
 }
 
+#scrollDownBtn:hover {
+    background-color: #fff;
+    color:#005691;
+}
+
 .techkle_animate {
     display: flex;
     justify-content: center;
@@ -314,6 +319,12 @@ h3 {
 }
 
 .order_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.order_btn a{
     font-weight: bold;
     border: 2px solid #005691;
     border-radius: 20px;
@@ -321,9 +332,10 @@ h3 {
     position: absolute;
     bottom: 20px; 
     color:#005691;
+    text-decoration: none;
 }
 
-.order_btn:hover {
+.order_btn a:hover {
     background-color: #005691;
     color: #fff;
 }

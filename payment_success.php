@@ -45,6 +45,6 @@ include("main_header.php");
     <i class="fas fa-check">✔</i>
   </div>
   <div class="message">Successful Payment</div>
-  <p><a href='index.php'>Back to Home</a></p>
+  <p><a href='product.php'>Back to Home</a></p>
 </body>
 </html>

@@ -11,7 +11,7 @@ session_start();
     <div class="header">
         
             <div class="right">
-                <a href="index.php"><img src="css/techkle_logo.png"></a>
+                <a href="product.php"><img src="css/techkle_logo.png"></a>
                 <?php 
                     if(!isset($_SESSION["customer_name"])){
                 ?>
