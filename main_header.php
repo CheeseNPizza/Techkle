@@ -28,9 +28,13 @@ session_start();
         <div class="title">
             <a href="order.php">
                 <p>Cart<i class='bx bx-cart' ></i></p>    
-            </a>  
-            <p id="loginBtn">Login<i class='bx bx-log-in'></i></p>
-            
+            </a>
+            <?php if(!isset($_SESSION["customer_name"])){ ?>
+                <p id="loginBtn">Login<i class='bx bx-log-in'></i></p>
+            <?php } else { ?>
+                <a href = "logout.php" onclick="return confirm('Are you sure you want to logout?')">
+                    <p>Logout<i class='bx bx-log-in'></i></p></a>
+            <?php } ?>
         </div>
     </div>
     <div class="popup">
