@@ -72,4 +72,5 @@ $total_price = 0;
     <a class = "table-btn" href = "order.php">Back to order</a>
     </div>
 </body>
+<?php require("footer.php"); ?>
 </html>

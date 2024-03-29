@@ -153,4 +153,5 @@ if (isset($_POST['Delete'])) {
     <br><hr><br>
     <a class ="table-btn" href = "order.php">Back to order</a>
 </body>
+<?php require("footer.php"); ?>
 </html>
