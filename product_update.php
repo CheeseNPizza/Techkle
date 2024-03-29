@@ -1,5 +1,5 @@
 <?php
-    include("main_header.php");
+    include("staff_header.php");
     require('database.php');
     $id=$_REQUEST['id'];
     $query = "SELECT * FROM product where id='".$id."'"; 

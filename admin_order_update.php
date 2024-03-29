@@ -1,6 +1,6 @@
 <?php
-require("admin_header.php");
-require('database.php');
+    include("staff_header.php");
+    require('database.php');
 
 $currencySymbol = "RM";
 $total_price = 0;
@@ -170,5 +170,4 @@ if (isset($_POST['UpdateStatus'])) {
     <br><hr><br>
     <a class ="table-btn" href = "admin_order.php">Back to order</a>
 </body>
-<?php require("footer.php"); ?>
 </html>

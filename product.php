@@ -1,6 +1,7 @@
 <?php
 require('database.php');
 require('main_header.php');
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -404,9 +405,6 @@ require('main_header.php');
     
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
-    <?php
-        require('footer.php');
-    ?>
 </body>
 
 </html>

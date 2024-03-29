@@ -1,6 +1,6 @@
 <?php
-require("admin_header.php");
-require('database.php');
+    include("staff_header.php");
+    require('database.php');
 
 $currencySymbol = "RM";
 $total_price = 0;
@@ -72,5 +72,4 @@ $total_price = 0;
     <a class = "table-btn" href = "admin_order.php">Back to order</a>
     </div>
 </body>
-<?php require("footer.php"); ?>
 </html>

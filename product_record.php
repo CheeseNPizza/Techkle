@@ -1,6 +1,7 @@
 <?php
 require('database.php');
-require('admin_header.php');
+include("staff_header.php");
+
 ?>
 <!DOCTYPE html>
 <html>

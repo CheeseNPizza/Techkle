@@ -82,8 +82,9 @@
             <div class="content">
                 <?php if ($isAdmin): ?>
                 <!-- Only display the link if the logged-in staff is an admin -->
-                
                 <a href='staff_registration.php'>Insert new staff</a>
+                <a href="product_record.php">Product record</a>
+                <a href="admin_order.php">Order</a>
                 <?php endif; ?>
                 <a href="staff_view.php">View your information</a>
                 <a href="staff_display_profile.php">Company Staff</a>
