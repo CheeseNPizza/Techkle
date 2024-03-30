@@ -14,7 +14,6 @@ body {
 .container {
     min-height: 100vh;
     min-width: 319px;
-    /* background-color: aqua; */
     padding: 20px;
 }
 
@@ -114,9 +113,7 @@ h3 {
     color: #005691;
 }
 
-/* .nav_bar {
-    height: fit-content;
-} */
+/*s*/
 
 .nav_bar p {
     font-size: 24px;
@@ -242,6 +239,75 @@ h3 {
 }
 /*category css end*/
 
+/*try*/
+/* .cat_largest_box {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #005691;
+}
+
+.cat_container {
+    max-width: 1120px;
+    width:100%;
+    background-color: grey;
+    padding: 40px 0;
+}
+
+.cat_slide_container {
+    margin: 0 30px;
+    overflow: hidden;
+}
+
+.cat_card {
+    background: #fff;
+    border-radius: 20px;
+    width: auto;
+    flex: 1;
+    margin: 0 10px;
+}
+
+
+.cat_card .cat_image_box{
+    height:150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cat_card .cat_image_box img{
+    height:100%;
+    width: 100%;
+    border: 2px solid #005691;
+    border-radius: 20px;
+
+}
+
+.cat_swiper-navBtn {
+    color: #000;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.cat_swiper-navBtn::before
+.cat_swiper-navBtn::after {
+    font-size: 18px;
+}
+
+.cat_swiper-pagination-bullet {
+    background-color: #000;
+}
+
+@media screen and (max-width: 768px) {
+    .cat_swiper-navBtn {
+        display: none;
+    }
+} */
+/*try*/
+
+
 /*product display css*/
 .space {
     margin-top: 20px;
@@ -261,7 +327,6 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
 .content_box {

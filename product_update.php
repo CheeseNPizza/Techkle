@@ -50,7 +50,7 @@
                         $updateFileQuery="UPDATE product SET product_name = '$product_name', product_desc = '$product_desc', product_price = '$product_price', product_cat = '$product_cat', product_quantity = '$product_quantity', product_image = '$newUploadedFileName', product_reg_date = '$date_record', submittedby = '$submittedby' WHERE id = $id";
                         mysqli_query($con, $updateFileQuery) or die(mysqli_error($con));
                         $status = "Product updated successfully.";
-                        header("Location: product_record.php");
+                        header("Location: product_record.php?update=success");
                     }else{
                         $status = "Product update failed.";
                     }

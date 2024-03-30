@@ -1,7 +1,6 @@
 <?php
 require('database.php');
 require('main_header.php');
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,6 +26,7 @@ require('main_header.php');
                     <h2>Techkle</h2>
                 </div>
                 <h3>Explore a world of gadgets. Start browsing now!</h3>
+                <!-- category navigation bar -->
                 <div class="nav_bar">
                     <p>Category</p>
                     <div class="flex-container">
@@ -40,6 +40,93 @@ require('main_header.php');
                         <div id="fh"><img src="css/category_image/fh2.jpg"></div>
                     </div>
                 </div>
+                <!--s-->
+                <!-- <div class="nav_bar">
+                    <p>Category</p>
+                    <div class="cat_slide_container cat_swiper">
+                        <div class="cat_slide_container">
+                            <div class="cat_card_wrapper swiper-wrapper">
+                                <div class="swiper-slide"> 
+                                    <div id="ca"><img src="css/category_image/ca.jpg"></div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div id="pc"><img src="css/category_image/pc.jpg"></div>
+                                </div> 
+                                <div class="swiper-slide">
+                                    <div id="aa"><img src="css/category_image/aa.jpg"></div>
+                                </div> 
+                                <div class="swiper-slide">
+                                    <div id="sa"><img src="css/category_image/sa3.jpg"></div>
+                                </div> 
+                                <div class="swiper-slide">
+                                    <div id="ms"><img src="css/category_image/ms.jpg"></div>
+                                </div> 
+                                <div class="swiper-slide">
+                                    <div id="cm"><img src="css/category_image/cm.jpg"></div>
+                                </div> 
+                                <div class="swiper-slide">
+                                    <div id="ga"><img src="css/category_image/ga2.jpg"></div>
+                                </div> 
+                                <div class="swiper-slide">
+                                    <div id="fh"><img src="css/category_image/fh2.jpg"></div>                                           
+                                </div>        
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="cat_largest_box">
+                    <div class="cat_container cat_swiper"> 
+                        <div class="cat_slide_container">
+                            <div class="cat_card_wrapper cat_swipper-wrapper">
+                                <div class="cat_card cat_swiper-slide"> 
+                                    <div class="cat_image_box">
+                                        <div id="ca"><img src="css/category_image/ca.jpg"></div>
+                                    </div>
+                                </div>
+                                <div class="cat_card cat_swiper-slide">
+                                    <div class="cat_image_box">
+                                    <div id="pc"><img src="css/category_image/pc.jpg"></div>
+                                    </div>
+                                </div>
+                                <div class="cat_card cat_swiper-slide">
+                                    <div class="cat_image_box">
+                                    <div id="aa"><img src="css/category_image/aa.jpg"></div>
+                                    </div>
+                                </div>
+                                <div class="cat_card cat_swiper-slide">
+                                    <div class="cat_image_box">
+                                    <div id="sa"><img src="css/category_image/sa3.jpg"></div>
+                                    </div>
+                                </div>
+                                <div class="cat_card cat_swiper-slide">
+                                    <div class="cat_image_box">
+                                    <div id="ms"><img src="css/category_image/ms.jpg"></div>
+                                    </div>
+                                </div>
+                                <div class="cat_card cat_swiper-slide">
+                                    <div class="cat_image_box">
+                                    <div id="cm"><img src="css/category_image/cm.jpg"></div>
+                                    </div>
+                                </div>
+                                <div class="cat_card cat_swiper-slide">
+                                    <div class="cat_image_box">
+                                    <div id="ga"><img src="css/category_image/ga2.jpg"></div>
+                                    </div>
+                                </div>
+                                <div class="cat_card cat_swiper-slide">
+                                    <div class="cat_image_box">
+                                    <div id="fh"><img src="css/category_image/fh2.jpg"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cat_swiper-button-next cat_swiper-navBtn"></div>
+                            <div class="cat_swiper-button-prev cat_swiper-navBtn"></div>
+                            <div class="cat_swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!--e-->
                 <div id="ca_content" class="space">
                     <p class="cat_title">Charging Accessories</p>
                     <div class="line"></div>
@@ -405,6 +492,9 @@ require('main_header.php');
     
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
+    <?php
+        require('footer.php');
+    ?>
 </body>
 
 </html>

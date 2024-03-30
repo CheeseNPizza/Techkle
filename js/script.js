@@ -75,3 +75,44 @@ var swiper = new Swiper(".slide_container", {
       dynamicBullets: true,
     },
 });
+
+// var cat_swiper = new Swiper(".cat_slide_container", {
+//     slidesPerView: 4,
+//     spaceBetween: 20,
+//     centeredSlides: false,
+//     slidesPerGroupSkip: 4,
+//     loop: true,
+//     centerSlide: "true",
+//     fade: "true",
+//     grabCursor: true,
+//     keyboard: {
+//       enabled: true,
+//     },
+//     breakpoints: {
+//         0: {
+//             slidesPerView: 1,
+//         },
+//         520: {
+//             slidesPerView: 2,
+//         },
+//         769: {
+//             slidesPerView: 3,
+//             slidesPerGroup: 3,
+//         },
+//         1000: {
+//             slidesPerView: 4,
+//         }
+//     },
+//     scrollbar: {
+//       el: ".cat_swiper-scrollbar",
+//     },
+//     navigation: {
+//       nextEl: ".cat_swiper-button-next",
+//       prevEl: ".cat_swiper-button-prev",
+//     },
+//     pagination: {
+//       el: ".cat_swiper-pagination",
+//       clickable: true,
+//       dynamicBullets: true,
+//     },
+// });

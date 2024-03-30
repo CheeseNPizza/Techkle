@@ -1,37 +1,7 @@
 <?php
     include("staff_header.php");
-    require('database.php');
-$status = "";
-if(isset($_POST['new']) && $_POST['new']==1){
-    $allowedExtensions=['png','jpeg','jpg'];
-    $uploadedFileName = $_FILES['image']['name'];
-    $fileExtension=strtolower(pathinfo($uploadedFileName, PATHINFO_EXTENSION));
-
-    if(in_array($fileExtension, $allowedExtensions)){
-        $targetDirectory = "product_image/";
-        $targetFilePath = $targetDirectory . $uploadedFileName;
-
-        if (move_uploaded_file($_FILES['image']['tmp_name'], $targetFilePath)) {
-            $product_name =$_REQUEST['product_name'];
-            $product_desc =$_REQUEST['product_desc'];
-            $product_price =$_REQUEST['product_price'];
-            $product_cat =$_REQUEST['product_category'];
-            $product_quantity = $_REQUEST['product_quantity'];
-            $date_record = date("Y-m-d H:i:s");
-            $submittedby = $_SESSION["customer_ID"];
-            $ins_query="INSERT into product (`product_name`,`product_desc`,`product_price`,`product_cat`,`product_quantity`,`product_image`,`product_reg_date`,`submittedby`)values
-            ('$product_name','$product_desc','$product_price','$product_cat','$product_quantity','$uploadedFileName','$date_record','$submittedby')";
-            mysqli_query($con,$ins_query) or die(mysqli_error($con));
-            $status = "New product inserted successfully.";
-            header("Location: product_record.php");
-        }else{
-            $status = "Product insert failed.";
-        }
-    }else{
-        $status = "Invalid file type.";
-    }
-}
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,8 +15,64 @@ if(isset($_POST['new']) && $_POST['new']==1){
 <div class="container">
     <div class="child">
         <div class="wrapper">
+            <h1>Insert New Product</h1>
+            <?php
+                include("staff_auth.php");
+                require('database.php');
+                $status = "";
+
+                // Initialize errors array
+                $errors = array();
+
+                if(isset($_POST['new']) && $_POST['new']==1){
+                    $allowedExtensions=['png','jpeg','jpg'];
+                    $uploadedFileName = $_FILES['image']['name'];
+                    $fileExtension=strtolower(pathinfo($uploadedFileName, PATHINFO_EXTENSION));
+
+                    if(in_array($fileExtension, $allowedExtensions)){
+                        $targetDirectory = "product_image/";
+                        $targetFilePath = $targetDirectory . $uploadedFileName;
+
+                        if (move_uploaded_file($_FILES['image']['tmp_name'], $targetFilePath)) {
+                            $product_name =$_REQUEST['product_name'];
+                            $product_desc =$_REQUEST['product_desc'];
+                            $product_price =$_REQUEST['product_price'];
+                            $product_cat =$_REQUEST['product_category'];
+                            $product_quantity = $_REQUEST['product_quantity'];
+                            $date_record = date("Y-m-d H:i:s");
+                            $submittedby = $_SESSION["staffName"];
+
+                            //input validation 
+                            if (!preg_match("/^[a-zA-Z ]+$/",$product_name)){
+                                $errors[]="Product name should only consist of letters and spaces!";
+                            }
+
+                            if(empty($errors)){
+                                $ins_query="INSERT into product (`product_name`,`product_desc`,`product_price`,`product_cat`,`product_quantity`,`product_image`,`product_reg_date`,`submittedby`)values
+                                ('$product_name','$product_desc','$product_price','$product_cat','$product_quantity','$uploadedFileName','$date_record','$submittedby')";
+                                mysqli_query($con,$ins_query) or die(mysqli_error($con));
+                                $status = "New product inserted successfully.";
+                                header("Location: product_record.php?status=success");
+                            }
+                            
+                        }else{
+                            $status = "Product insert failed.";
+                            $errors[]="Product insert failed.";
+                        }
+                    }else{
+                        $status = "Invalid file type.";
+                        $errors[]="Invlaid file type!";
+                    }
+                    // Display errors
+                    if (!empty($errors)) {
+                        foreach ($errors as $error) {
+                            echo "<p class='error'>$error</p>";
+                        }
+                    }
+                }
+            ?>
             <form enctype="multipart/form-data" action="" method="post" name="form">
-                <h1>Insert New Product</h1>
+                
                 <!-- Specify this form as a new submission -->
                 <input type="hidden" name="new" value="1" /> 
                 <!-- product_name -->
@@ -84,8 +110,6 @@ if(isset($_POST['new']) && $_POST['new']==1){
                     <i class='bx bx-list-check'></i>
                 </div>
                 <!-- product_picture -->
-                <!-- <input type="file" name="file" id="fileInput" required/>
-                <label for="fileInput">Upload Product Image<i class='bx bx-upload' ></i></label> -->
                 <label>Upload Product Image<i class='bx bx-upload' ></i></label>
                 <input type="file" class="uploadbtn" name="image" required/>
                 <!-- submit button -->

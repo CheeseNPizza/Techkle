@@ -1,7 +1,7 @@
 <?php
 require('database.php');
 include("staff_header.php");
-
+include("staff_auth.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,6 +11,14 @@ include("staff_header.php");
     <link rel="stylesheet" href="css/product_record.css">
 </head>
 <body>
+    <?php
+        if(isset($_GET['status']) && $_GET['status'] == 'success') {
+            echo "<script>alert('New product inserted successfully.');</script>";
+        }
+        if(isset($_GET['update']) && $_GET['update'] == 'success') {
+            echo "<script>alert('Product updated successfully.');</script>";
+        }
+    ?>
     <div class="product_record_title">
         <h2>View Product Records</h2>
         <p><a href = "product_create.php">Create new product</a></p>
@@ -52,8 +60,7 @@ include("staff_header.php");
                 <a href="product_update.php?id=<?php echo $row["id"]; ?>">Update</a> <!--get the responding id of the line-->
                 </td>
                 <td align="center">
-                <a href="product_delete.php?id=<?php echo $row["id"]; ?>" onclick="return confirm('Are you sure 
-                you want to delete this product record?')">Delete</a>
+                <a href="product_delete.php?id=<?php echo $row["id"]; ?>" onclick="return confirm('Are you sure you want to delete this product record?')">Delete</a>
                 </td>
                 </tr>
                 <!-- end of our form handling, increment -->
