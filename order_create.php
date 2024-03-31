@@ -2,12 +2,13 @@
 include("auth.php");
 require("database.php");
 
-$check_query = "SELECT * FROM `order` WHERE status = 'Pending';";
+$customer_ID = $_SESSION['customer_ID'];
+
+$check_query = "SELECT * FROM `order` WHERE status = 'Pending' AND user_ID = $customer_ID";
 $check_result = mysqli_query($con, $check_query) or die(mysqli_error($con));
 $check_row = mysqli_fetch_assoc($check_result);
 if ($check_row == NULL) {
 
-    $customer_ID = $_SESSION['customer_ID'];
     $status = "Pending";
     $created_at = date("Y-m-d H:i:s");
 
