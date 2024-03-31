@@ -4,9 +4,10 @@ require("database.php");
 
 // Get product ID to be inserted
 $product_ID = $_GET['product_ID'];
+$customer_ID = $_SESSION['customer_ID'];
 
 // Check if there is no pending order
-$check_query = "SELECT * FROM `order` WHERE status = 'Pending';";
+$check_query = "SELECT * FROM `order` WHERE status = 'Pending' AND user_ID = $customer_ID";
 $check_result = mysqli_query($con, $check_query) or die(mysqli_error($con));
 $check_row = mysqli_fetch_assoc($check_result);
 
